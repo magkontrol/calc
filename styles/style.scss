@@ -11,6 +11,7 @@ body {
 }
 
 .calc {
+  border-radius: 20px;
   color: #000;
   display: flex;
   padding: 10px 6px;
@@ -27,13 +28,17 @@ body {
     gap: 6px;
   }
   &__first {
+    border-radius: 5px;
     text-align: end;
     background-color: #bface2;
     height: 60px;
+    min-width: 180px;
     border: none;
     outline: none;
   }
   &__second {
+    min-width: 180px;
+    border-radius: 5px;
     text-align: end;
     background-color: #bface2;
     height: 60px;
@@ -41,6 +46,8 @@ body {
     outline: none;
   }
   &__operation {
+    min-width: 180px;
+    border-radius: 5px;
     text-align: end;
     background-color: #bface2;
     height: 60px;
@@ -55,6 +62,8 @@ body {
     background: linear-gradient(#b4e4ff, #95bdff);
   }
   &__result {
+    min-width: 180px;
+    border-radius: 5px;
     padding: 6px;
     display: flex;
     height: 60px;
@@ -63,6 +72,5 @@ body {
     border-color: #000;
     color: #000;
     background-color: #ffcefe;
-    min-width: 60px;
   }
 }
