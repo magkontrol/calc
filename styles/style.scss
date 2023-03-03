@@ -11,9 +11,58 @@ body {
 }
 
 .calc {
-  padding: 50px 0;
-  background-color: aqua;
+  color: #000;
+  display: flex;
+  padding: 10px 6px;
+  align-items: center;
+  justify-content: center;
+  background-color: #3e54ac;
+  max-width: 500px;
+  max-height: 600px;
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  &__first {
+    text-align: end;
+    background-color: #bface2;
+    height: 60px;
+    border: none;
+    outline: none;
+  }
+  &__second {
+    text-align: end;
+    background-color: #bface2;
+    height: 60px;
+    border: none;
+    outline: none;
+  }
+  &__operation {
+    text-align: end;
+    background-color: #bface2;
+    height: 60px;
+    border: none;
+    outline: none;
+  }
+  &__button {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+
+    background: linear-gradient(#b4e4ff, #95bdff);
+  }
   &__result {
+    padding: 6px;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    border-color: #000;
     color: #000;
+    background-color: #ffcefe;
+    min-width: 60px;
   }
 }

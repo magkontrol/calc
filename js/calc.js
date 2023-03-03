@@ -7,27 +7,97 @@ let operation = document.querySelector(".calc__operation");
 let button = document.querySelector(".calc__button");
 let output = document.querySelector(".calc__result");
 
-function sum() {}
+// сложение
+function sum(firstValue, secondValue) {
+  if (!firstValue.length) {
+    return "Заполните первое поле";
+  }
+  if (!secondValue.length) {
+    return "Заполните второе поле";
+  }
+  if (isNaN(firstValue)) {
+    return "В первом поле введите число";
+  }
+  if (isNaN(secondValue)) {
+    return "Во втором поле введите число";
+  }
+
+  return +firstValue + +secondValue;
+}
+
+// вычитание
+function subtraction(firstValue, secondValue) {
+  if (!firstValue.length) {
+    return "Заполните первое поле";
+  }
+  if (!secondValue.length) {
+    return "Заполните второе поле";
+  }
+  if (isNaN(firstValue)) {
+    return "В первом поле введите число";
+  }
+  if (isNaN(secondValue)) {
+    return "Во втором поле введите число";
+  }
+
+  return +firstValue - +secondValue;
+}
+
+// умножение
+function multiplication(firstValue, secondValue) {
+  if (!firstValue.length) {
+    return "Заполните первое поле";
+  }
+  if (!secondValue.length) {
+    return "Заполните второе поле";
+  }
+  if (isNaN(firstValue)) {
+    return "В первом поле введите число";
+  }
+  if (isNaN(secondValue)) {
+    return "Во втором поле введите число";
+  }
+
+  return +firstValue * +secondValue;
+}
+
+// деление
+function division(firstValue, secondValue) {
+  if (!firstValue.length) {
+    return "Заполните первое поле";
+  }
+  if (!secondValue.length) {
+    return "Заполните второе поле";
+  }
+  if (isNaN(firstValue)) {
+    return "В первом поле введите число";
+  }
+  if (isNaN(secondValue)) {
+    return "Во втором поле введите число";
+  }
+
+  return +firstValue / +secondValue;
+}
 
 button.addEventListener("click", function () {
   switch (operation.value) {
     case "+":
       console.log("check");
-      output.innerHTML = +firstInput.value + +secondInput.value;
+      output.innerHTML = sum(firstInput.value, secondInput.value);
       break;
     case "-":
       console.log("check");
-      output.innerHTML = +firstInput.value - +secondInput.value;
+      output.innerHTML = subtraction(firstInput.value, secondInput.value);
       break;
 
     case "/":
       console.log("check");
-      output.innerHTML = +firstInput.value / +secondInput.value;
+      output.innerHTML = division(firstInput.value, secondInput.value);
       break;
 
     case "*":
       console.log("check");
-      output.innerHTML = +firstInput.value * +secondInput.value;
+      output.innerHTML = multiplication(firstInput.value, secondInput.value);
       break;
 
     default:
