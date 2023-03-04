@@ -1,13 +1,13 @@
 "usestrict";
 console.log(`privet`);
 
-let firstInput = document.querySelector(".calc__first");
-let secondInput = document.querySelector(".calc__second");
-let operation = document.querySelector(".calc__operation");
-let button = document.querySelector(".calc__button");
-let output = document.querySelector(".calc__result");
+const firstInput = document.querySelector(".calc__first");
+const secondInput = document.querySelector(".calc__second");
+const operation = document.querySelector(".calc__operation");
+const button = document.querySelector(".calc__button");
+const output = document.querySelector(".calc__result");
 
-function validateNumber(firstValue, secondValue) {
+const validateNumber = (firstValue, secondValue) => {
   if (!firstValue.length && !secondValue.length) {
     return "Заполните первое и второе поле";
   }
@@ -26,43 +26,43 @@ function validateNumber(firstValue, secondValue) {
   }
 
   return false;
-}
+};
 
 // сложение
-function sum(firstValue, secondValue) {
+const sum = (firstValue, secondValue) => {
   if (validateNumber(firstValue, secondValue)) {
     return validateNumber(firstValue, secondValue);
   }
 
   return +firstValue + +secondValue;
-}
+};
 
 // вычитание
-function subtraction(firstValue, secondValue) {
+const subtraction = (firstValue, secondValue) => {
   if (validateNumber(firstValue, secondValue)) {
     return validateNumber(firstValue, secondValue);
   }
 
   return +firstValue - +secondValue;
-}
+};
 
 // умножение
-function multiplication(firstValue, secondValue) {
+const multiplication = (firstValue, secondValue) => {
   if (validateNumber(firstValue, secondValue)) {
     return validateNumber(firstValue, secondValue);
   }
 
   return +firstValue * +secondValue;
-}
+};
 
 // деление
-function division(firstValue, secondValue) {
+const division = (firstValue, secondValue) => {
   if (validateNumber(firstValue, secondValue)) {
     return validateNumber(firstValue, secondValue);
   }
 
   return +firstValue / +secondValue;
-}
+};
 
 button.addEventListener("click", function () {
   switch (operation.value) {
