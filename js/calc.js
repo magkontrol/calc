@@ -7,8 +7,11 @@ let operation = document.querySelector(".calc__operation");
 let button = document.querySelector(".calc__button");
 let output = document.querySelector(".calc__result");
 
-// сложение
-function sum(firstValue, secondValue) {
+function validateNumber(firstValue, secondValue) {
+  if (!firstValue.length && !secondValue.length) {
+    return "Заполните первое и второе поле";
+  }
+
   if (!firstValue.length) {
     return "Заполните первое поле";
   }
@@ -20,6 +23,15 @@ function sum(firstValue, secondValue) {
   }
   if (isNaN(secondValue)) {
     return "Во втором поле введите число";
+  }
+
+  return false;
+}
+
+// сложение
+function sum(firstValue, secondValue) {
+  if (validateNumber(firstValue, secondValue)) {
+    return validateNumber(firstValue, secondValue);
   }
 
   return +firstValue + +secondValue;
@@ -27,17 +39,8 @@ function sum(firstValue, secondValue) {
 
 // вычитание
 function subtraction(firstValue, secondValue) {
-  if (!firstValue.length) {
-    return "Заполните первое поле";
-  }
-  if (!secondValue.length) {
-    return "Заполните второе поле";
-  }
-  if (isNaN(firstValue)) {
-    return "В первом поле введите число";
-  }
-  if (isNaN(secondValue)) {
-    return "Во втором поле введите число";
+  if (validateNumber(firstValue, secondValue)) {
+    return validateNumber(firstValue, secondValue);
   }
 
   return +firstValue - +secondValue;
@@ -45,17 +48,8 @@ function subtraction(firstValue, secondValue) {
 
 // умножение
 function multiplication(firstValue, secondValue) {
-  if (!firstValue.length) {
-    return "Заполните первое поле";
-  }
-  if (!secondValue.length) {
-    return "Заполните второе поле";
-  }
-  if (isNaN(firstValue)) {
-    return "В первом поле введите число";
-  }
-  if (isNaN(secondValue)) {
-    return "Во втором поле введите число";
+  if (validateNumber(firstValue, secondValue)) {
+    return validateNumber(firstValue, secondValue);
   }
 
   return +firstValue * +secondValue;
@@ -63,17 +57,8 @@ function multiplication(firstValue, secondValue) {
 
 // деление
 function division(firstValue, secondValue) {
-  if (!firstValue.length) {
-    return "Заполните первое поле";
-  }
-  if (!secondValue.length) {
-    return "Заполните второе поле";
-  }
-  if (isNaN(firstValue)) {
-    return "В первом поле введите число";
-  }
-  if (isNaN(secondValue)) {
-    return "Во втором поле введите число";
+  if (validateNumber(firstValue, secondValue)) {
+    return validateNumber(firstValue, secondValue);
   }
 
   return +firstValue / +secondValue;
@@ -92,7 +77,9 @@ button.addEventListener("click", function () {
 
     case "/":
       console.log("check");
+
       output.innerHTML = division(firstInput.value, secondInput.value);
+
       break;
 
     case "*":
@@ -101,6 +88,7 @@ button.addEventListener("click", function () {
       break;
 
     default:
+      output.innerHTML = "Выберите операцию";
       break;
   }
 });
